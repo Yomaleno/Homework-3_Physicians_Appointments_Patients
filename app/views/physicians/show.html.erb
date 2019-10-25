@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h2><%= @physician.name %></h2>
+</p>
+
+<p>
+  <h4>Specialty: <%= @physician.specialty %></h4>
+</p>
+
+<hr>
+
+<h4>Office Locations</h4>
+
+<div class="location-table">
+  <table class = "blueTable">
+    <thead>
+      <tr>
+        <th>Street Address</th>
+        <th>Zip Code</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @physician.offices.each do |physician| %>
+        <tr>
+          <td><%= physician.street %></td>
+          <td><%= physician.zip_code %></td>
+          <td><%= physician.phone_number %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+
+<h4>Current Appointments</h4>
+
+<div class = "appointment-table">
+  <table class = "blueTable">
+    <thead>
+      <tr>
+        <th>Patient Name</th>
+        <th>Date of Appointment</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @physician.appointments.each do |physician| %>
+        <tr>
+          <td><%= physician.patient.first_name %> <%= physician.patient.last_name %> </td>
+          <td><%= physician.visit %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<%= link_to 'Edit', edit_physician_path(@physician) %> |
+<%= link_to 'Back', physicians_path %>
