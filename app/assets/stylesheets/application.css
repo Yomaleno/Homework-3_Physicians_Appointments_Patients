@@ -68,8 +68,4 @@ table.blueTable tr:nth-child(odd) {
    padding: 10px
 }
 
-table.blueTable td, table.blueTable th {
-   border: 1px solid #AAAAAA;
-   padding:3px 2px
-}
 
